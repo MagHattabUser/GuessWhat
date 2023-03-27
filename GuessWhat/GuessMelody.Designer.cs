@@ -34,6 +34,9 @@
             this.AnswerThree = new System.Windows.Forms.Button();
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.RestartButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,12 +115,54 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Рок",
+            "Рэп"});
+            this.comboBox1.Location = new System.Drawing.Point(13, 158);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 32);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // RestartButton
+            // 
+            this.RestartButton.BackColor = System.Drawing.Color.Yellow;
+            this.RestartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RestartButton.Location = new System.Drawing.Point(267, 240);
+            this.RestartButton.Name = "RestartButton";
+            this.RestartButton.Size = new System.Drawing.Size(182, 41);
+            this.RestartButton.TabIndex = 7;
+            this.RestartButton.Tag = "main";
+            this.RestartButton.Text = "Сыграть еще";
+            this.RestartButton.UseVisualStyleBackColor = false;
+            this.RestartButton.Visible = false;
+            this.RestartButton.Click += new System.EventHandler(this.ReserButton_Click);
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Orange;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ExitButton.Location = new System.Drawing.Point(267, 157);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(182, 60);
+            this.ExitButton.TabIndex = 8;
+            this.ExitButton.Tag = "exit";
+            this.ExitButton.Text = "Выйти в главное меню";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Visible = false;
+            // 
             // GuessMelody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(714, 450);
+            this.Controls.Add(this.ExitButton);
+            this.Controls.Add(this.RestartButton);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.AnswerThree);
@@ -140,5 +185,8 @@
         private System.Windows.Forms.Button AnswerThree;
         private System.Windows.Forms.Label ScoreLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button RestartButton;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

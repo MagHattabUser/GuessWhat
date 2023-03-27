@@ -12,25 +12,27 @@ namespace GuessWhat
 {
     public partial class GuessMelody : Form
     {
-        private Melody Melodies = new Melody();
+        private Melody Melodies;
         private string CurrentPlayMelody;
         private List<int> AlreadyPlayed = new List<int>();
         private int Score = 0;
+        private bool IsInit = false;
         public GuessMelody()
         {
             InitializeComponent();
             ScoreLabel.Text = "Очки: " + Score.ToString();
+            comboBox1.Text = comboBox1.Items[0].ToString();
         }
 
         private void StartMelodyGame_Click(object sender, EventArgs e)
         {
-            StartMelodyGame.Text = "Следующая песня";
-            AnswerOne.Visible = true;
-            AnswerTwo.Visible = true;
-            AnswerThree.Visible = true;
+            if (!IsInit)
+            {
+                Init();
+            }
+
             UnBlockButtons();
             StartMelodyGame.Enabled = false;
-
             Random random = new Random();
             int correctAnswer = random.Next(0, Melodies.Count());
 
@@ -55,6 +57,17 @@ namespace GuessWhat
             CheckTheSameAnswer(correctAnswer, ref answerTwo, answerOne);
             FillButtonsText(correctAnswer, answerOne, answerTwo);
             Melodies.Begin(correctAnswer);
+        }
+
+        private void Init()
+        {
+            Melodies = new Melody(comboBox1.Text);
+            IsInit = true;
+            comboBox1.Enabled = false;
+            StartMelodyGame.Text = "Следующая песня";
+            AnswerOne.Visible = true;
+            AnswerTwo.Visible = true;
+            AnswerThree.Visible = true;
         }
 
         private void FillButtonsText(int correctAnswer, int answerOne, int answerTwo)
@@ -162,8 +175,30 @@ namespace GuessWhat
                         button.Enabled = false;
                     }
                 }
+                Melodies.Stop();
+                RestartButton.Visible = true;
+                RestartButton.Enabled = true;
                 MessageBox.Show("Вы набрали " + Score.ToString() + " из 10", "Игра оконченая", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ResetGame()
+        {
+            IsInit = false;
+            comboBox1.Enabled = true;
+            StartMelodyGame.Enabled=true;
+            StartMelodyGame.Text = "Начать игру";
+            AnswerOne.Visible = false;
+            AnswerTwo.Visible = false;
+            AnswerThree.Visible = false;
+            RestartButton.Visible = false;
+            Score = 0;
+            ScoreLabel.Text = Score.ToString();
+        }
+
+        private void ReserButton_Click(object sender, EventArgs e)
+        {
+            ResetGame();
         }
     }
 }

@@ -81,7 +81,7 @@ namespace GuessWhat
 
             foreach (Control button in this.Controls)
             {
-                if (button is Button && button.Tag.ToString() != "main")
+                if (button is Button && button.Tag.ToString() != "main" && button.Tag.ToString() != "exit")
                 {
                     buttonList.Add((Button)button);
                 }
@@ -194,6 +194,7 @@ namespace GuessWhat
             RestartButton.Visible = false;
             Score = 0;
             ScoreLabel.Text = Score.ToString();
+            AlreadyPlayed.Clear();
         }
 
         private void ReserButton_Click(object sender, EventArgs e)

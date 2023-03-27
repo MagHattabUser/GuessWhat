@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Media;
 using WMPLib;
+using System.Windows.Forms;
 
 namespace GuessWhat
 {
@@ -16,14 +17,16 @@ namespace GuessWhat
         public List<string> MelodyPathList = new List<string>();
         WindowsMediaPlayer Player = new WindowsMediaPlayer();
 
-        public Melody()
+        public Melody(string musicTheme)
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(Path);
+            var path = Path + "\\" + musicTheme;
+            DirectoryInfo directoryInfo = new DirectoryInfo(path);
             Init(directoryInfo);
         }
 
         private void Init(DirectoryInfo directoryInfo)
         {
+
             FileInfo[] fileInfos = directoryInfo.GetFiles("*.mp3"); 
             foreach (var file in fileInfos)
             {
@@ -34,7 +37,6 @@ namespace GuessWhat
 
         public void Begin(int index)
         {
-            Random rnd = new Random();
             Player.URL = MelodyPathList[index];
             Player.settings.volume = 10;
             Player.controls.play();
@@ -58,6 +60,11 @@ namespace GuessWhat
         public bool Check(string filePath, string file)
         {
             return MelodyPathList.IndexOf(filePath) == MelodyNameList.IndexOf(file);
+        }
+
+        public void Stop()
+        {
+            Player.close();
         }
     }
 }

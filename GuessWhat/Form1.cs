@@ -19,14 +19,14 @@ namespace GuessWhat
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Melody melody = new Melody();
-            button1.Text = melody.GetPath(0);
+            //Melody melody = new Melody();
+            //button1.Text = melody.GetPath(0);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Melody melody = new Melody();
-            button2.Text = melody.GetMelody(0);
+            //Melody melody = new Melody();
+            //.Text = melody.GetMelody(0);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace GuessWhat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GuessMelody());
+            Application.Run(new Authentication());
         }
     }
 }

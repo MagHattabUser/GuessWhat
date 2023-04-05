@@ -33,6 +33,8 @@
             this.LoginInButton = new System.Windows.Forms.Button();
             this.SignInButton = new System.Windows.Forms.Button();
             this.HidePasswordCheck = new System.Windows.Forms.CheckBox();
+            this.LoginLabel = new System.Windows.Forms.Label();
+            this.PasswordLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // EntryLogin
@@ -83,17 +85,41 @@
             this.HidePasswordCheck.UseVisualStyleBackColor = true;
             this.HidePasswordCheck.CheckedChanged += new System.EventHandler(this.HidePasswordCheck_CheckedChanged);
             // 
+            // LoginLabel
+            // 
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Location = new System.Drawing.Point(91, 110);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(38, 13);
+            this.LoginLabel.TabIndex = 6;
+            this.LoginLabel.Text = "Логин";
+            // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Location = new System.Drawing.Point(91, 175);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(45, 13);
+            this.PasswordLabel.TabIndex = 7;
+            this.PasswordLabel.Text = "Пароль";
+            // 
             // Authentication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 480);
+            this.Controls.Add(this.PasswordLabel);
+            this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.HidePasswordCheck);
             this.Controls.Add(this.SignInButton);
             this.Controls.Add(this.LoginInButton);
             this.Controls.Add(this.EntryPassword);
             this.Controls.Add(this.EntryLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximumSize = new System.Drawing.Size(336, 519);
+            this.MinimumSize = new System.Drawing.Size(336, 519);
             this.Name = "Authentication";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authentication";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -107,5 +133,7 @@
         private System.Windows.Forms.Button LoginInButton;
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.CheckBox HidePasswordCheck;
+        private System.Windows.Forms.Label LoginLabel;
+        private System.Windows.Forms.Label PasswordLabel;
     }
 }

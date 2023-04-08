@@ -44,7 +44,7 @@ namespace GuessWhat
 
         public string GetMelody(int index)
         {
-            return MelodyNameList[index];
+            return MelodyNameList[index].Remove(MelodyNameList[index].Length - 4);
         }
 
         public string GetPath(int index)
@@ -59,7 +59,8 @@ namespace GuessWhat
 
         public bool Check(string filePath, string file)
         {
-            return MelodyPathList.IndexOf(filePath) == MelodyNameList.IndexOf(file);
+            var fullNameFile = file + ".mp3";
+            return MelodyPathList.IndexOf(filePath) == MelodyNameList.IndexOf(fullNameFile);
         }
 
         public void Stop()

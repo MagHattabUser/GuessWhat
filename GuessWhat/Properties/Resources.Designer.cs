@@ -63,6 +63,16 @@ namespace GuessWhat.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap guessfilmback {
+            get {
+                object obj = ResourceManager.GetObject("guessfilmback", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap guessmusicbackground {
             get {
                 object obj = ResourceManager.GetObject("guessmusicbackground", resourceCulture);

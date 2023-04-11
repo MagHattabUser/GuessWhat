@@ -152,7 +152,7 @@
             this.ExitButton.Tag = "exit";
             this.ExitButton.Text = "Выйти в главное меню";
             this.ExitButton.UseVisualStyleBackColor = false;
-            this.ExitButton.Visible = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // GuessMelody
             // 
@@ -169,7 +169,9 @@
             this.Controls.Add(this.AnswerTwo);
             this.Controls.Add(this.AnswerOne);
             this.Controls.Add(this.StartMelodyGame);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "GuessMelody";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuessMelody";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

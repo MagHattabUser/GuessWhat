@@ -17,11 +17,16 @@ namespace GuessWhat
         private List<int> AlreadyPlayed = new List<int>();
         private int Score = 0;
         private bool IsInit = false;
-        public GuessMelody()
+        private Player Players;
+        private XML XMLDoc;
+        public GuessMelody(Player players)
         {
             InitializeComponent();
             ScoreLabel.Text = "Очки: " + Score.ToString();
             comboBox1.Text = comboBox1.Items[0].ToString();
+            Players = players;
+            this.Text = "GuessWord " + Players.GetUserName() + " наибольшее количество очков - " + Players.GetMusicScore().ToString();
+            XMLDoc = new XML();
         }
 
         private void StartMelodyGame_Click(object sender, EventArgs e)
@@ -178,7 +183,14 @@ namespace GuessWhat
                 Melodies.Stop();
                 RestartButton.Visible = true;
                 RestartButton.Enabled = true;
+                ExitButton.Enabled = true;
                 MessageBox.Show("Вы набрали " + Score.ToString() + " из 10", "Игра оконченая", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Score > Players.GetMusicScore())
+                {
+                    XMLDoc.SaveScore(Players, "musicscore", Score);
+                    Players.SetMusicScore(Score);
+                    this.Text = "GuessWord " + Players.GetUserName() + " наибольшее количество очков - " + Players.GetMusicScore().ToString();
+                }
             }
         }
 
@@ -200,6 +212,15 @@ namespace GuessWhat
         private void ReserButton_Click(object sender, EventArgs e)
         {
             ResetGame();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Melodies.Stop();
+            MainMenu mainMenu = new MainMenu(Players);
+            Hide();
+            mainMenu.ShowDialog();
+            Close();
         }
     }
 }

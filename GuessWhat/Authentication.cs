@@ -25,9 +25,9 @@ namespace GuessWhat
             player = Data.Authenticate(EntryLogin.Text, EntryPassword.Text);
             if (player!=null)
             {
-                GuessMelody guessMelody = new GuessMelody();
+                MainMenu mainMenu = new MainMenu(player);
                 Hide();
-                guessMelody.ShowDialog();
+                mainMenu.ShowDialog();
                 Close();
             }
         }

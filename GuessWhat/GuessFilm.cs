@@ -17,11 +17,16 @@ namespace GuessWhat
         private List<int> AlreadyShow= new List<int>();
         private int Score = 0;
         private bool IsInit = false;
-        public GuessFilm()
+        private Player Players;
+        private XML XMLDoc;
+        public GuessFilm(Player players)
         {
             InitializeComponent();
             ScoreLabel.Text = "Очки: " + Score.ToString();
             comboBox1.Text = comboBox1.Items[0].ToString();
+            Players = players;
+            XMLDoc = new XML();
+            this.Text = "GuessWord " + Players.GetUserName() + " наибольшее количество очков - " + Players.GetFilmScore().ToString();
         }
 
         private void Init()
@@ -100,9 +105,16 @@ namespace GuessWhat
                         button.Enabled = false;
                     }
                 }
+                ExitButton.Enabled = true;
                 RestartButton.Visible = true;
                 RestartButton.Enabled = true;
                 MessageBox.Show("Вы набрали " + Score.ToString() + " из 10", "Игра оконченая", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Score > Players.GetFilmScore())
+                {
+                    XMLDoc.SaveScore(Players, "filmscore", Score);
+                    Players.SetFilmScore(Score);
+                    this.Text = "GuessWord " + Players.GetUserName() + " наибольшее количество очков - " + Players.GetFilmScore().ToString();
+                }
             }
         }
 
@@ -199,6 +211,14 @@ namespace GuessWhat
         private void RestartButton_Click(object sender, EventArgs e)
         {
             ResetGame();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenu = new MainMenu(Players);
+            Hide();
+            mainMenu.ShowDialog();
+            Close();
         }
     }
 }

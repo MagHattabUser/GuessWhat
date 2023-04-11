@@ -54,11 +54,11 @@
     </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="FilmImage.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="GuessFilm.cs">
       <SubType>Form</SubType>
@@ -72,6 +72,12 @@
     <Compile Include="GuessMelody.Designer.cs">
       <DependentUpon>GuessMelody.cs</DependentUpon>
     </Compile>
+    <Compile Include="GuessWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuessWord.Designer.cs">
+      <DependentUpon>GuessWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Melody.cs" />
     <Compile Include="Password.cs" />
     <Compile Include="Player.cs" />
@@ -83,18 +89,22 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="WordGame.cs" />
     <Compile Include="XML.cs" />
     <EmbeddedResource Include="Authentication.resx">
       <DependentUpon>Authentication.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuessFilm.resx">
       <DependentUpon>GuessFilm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuessMelody.resx">
       <DependentUpon>GuessMelody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuessWord.resx">
+      <DependentUpon>GuessWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

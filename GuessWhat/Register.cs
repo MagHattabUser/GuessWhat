@@ -30,9 +30,9 @@ namespace GuessWhat
             player = Data.Register(EntryLogin.Text, EntryUsername.Text, EntryPassword.Text);
             if(player != null)
             {
-                GuessMelody guessMelody = new GuessMelody();
+                MainMenu mainMenu = new MainMenu(player);
                 Hide();
-                guessMelody.ShowDialog();
+                mainMenu.ShowDialog();
                 Close();
             }
         }

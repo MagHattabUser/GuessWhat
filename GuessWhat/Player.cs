@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace GuessWhat
 {
-    internal class Player
+    public class Player
     {
         private string Login;
         private string UserName;
@@ -96,6 +96,11 @@ namespace GuessWhat
         public int GetWordScore()
         {
             return WordScore;
+        }
+
+        public int GetAllScores()
+        {
+            return WordScore + FilmScore + MusicScore;
         }
     }
 }

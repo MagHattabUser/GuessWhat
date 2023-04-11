@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace GuessWhat
 {
-    internal class XML
+    public class XML
     {
         private XmlDocument XDoc = new XmlDocument();
         private XmlElement XRoot;
@@ -130,6 +130,7 @@ namespace GuessWhat
                 XmlNode attr = xnode.Attributes.GetNamedItem("login");
                 if (attr.Value == login)
                 {
+                    player.SetLogin(login);
                     foreach (XmlNode childnode in xnode.ChildNodes)
                     {
                         if (childnode.Name == "username")
@@ -180,6 +181,26 @@ namespace GuessWhat
                 }                
             }
             return null;
+        }
+
+        public void SaveScore(Player player, string game, int score)
+        {
+            string login = player.GetLogin();
+            foreach (XmlElement xnode in XRoot)
+            {
+                XmlNode attr = xnode.Attributes.GetNamedItem("login");
+                if (attr.Value == login)
+                {
+                    foreach (XmlNode childnode in xnode.ChildNodes)
+                    {
+                        if (childnode.Name == game)
+                        {
+                            childnode.InnerText = score.ToString();
+                        }
+                    }
+                }
+            }
+            XDoc.Save("players.xml");
         }
     }
 }

@@ -22,6 +22,7 @@ namespace GuessWhat
             var path = Path + "\\" + musicTheme;
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
             Init(directoryInfo);
+            Player.URL = MelodyPathList[0];
         }
 
         private void Init(DirectoryInfo directoryInfo)
@@ -66,6 +67,10 @@ namespace GuessWhat
         public void Stop()
         {
             Player.close();
+            /*if (Player.isOnline)
+            {
+                Player.close();
+            }*/
         }
     }
 }

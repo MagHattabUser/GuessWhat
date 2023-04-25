@@ -157,5 +157,23 @@
   <ItemGroup>
     <None Include="bin\Debug\visual\guessfilmback.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\visual\mainmenuback.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\visual\backmain.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\visual\m1000x1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\visual\autentificationback.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\visual\hqdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\visual\rules.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,6 +27,8 @@ namespace GuessWhat
             Players = players;
             this.Text = "GuessWord " + Players.GetUserName() + " наибольшее количество очков - " + Players.GetMusicScore().ToString();
             XMLDoc = new XML();
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         private void StartMelodyGame_Click(object sender, EventArgs e)
@@ -216,11 +218,15 @@ namespace GuessWhat
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Melodies.Stop();
+            if (Melodies != null)
+            {
+                Melodies.Stop();
+            }
             MainMenu mainMenu = new MainMenu(Players);
             Hide();
             mainMenu.ShowDialog();
             Close();
+
         }
     }
 }

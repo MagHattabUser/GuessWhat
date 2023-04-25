@@ -72,7 +72,8 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Популярный"});
+            "Популярный",
+            "Мультики"});
             this.comboBox1.Location = new System.Drawing.Point(12, 379);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(199, 32);
@@ -87,6 +88,7 @@
             this.ScoreLabel.Size = new System.Drawing.Size(66, 24);
             this.ScoreLabel.TabIndex = 13;
             this.ScoreLabel.Text = "label1";
+            this.ScoreLabel.Visible = false;
             // 
             // AnswerThree
             // 

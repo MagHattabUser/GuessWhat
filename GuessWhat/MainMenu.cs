@@ -82,5 +82,35 @@ namespace GuessWhat
             authentication.ShowDialog();
             Close();
         }
+
+        private void RuleMelody_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Игроку предоставляется 10-секундный отрывок песни." +
+                "\r\n\r\nИгроку предоставляется три варианта ответа на выбор." +
+                "\r\n\r\nИгроку нужно выбрать правильный ответ из трех вариантов." +
+                "\r\n\r\nЕсли игрок выбирает правильный ответ, ему начисляется очко.",
+                "Правило игры", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void RuleFilm_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Игроку предоставляется кадр из фильма." +
+                "\r\n\r\nИгроку предоставляется три варианта ответа на выбор." +
+                "\r\n\r\nИгроку нужно выбрать правильный ответ из трех вариантов." +
+                "\r\n\r\nЕсли игрок выбирает правильный ответ, ему начисляется очко.",
+                "Правило игры", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void RuleWord_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Загадывается слово из 5 букв. Ваша задача — его угадать." +
+               "\r\n\r\nСлово должно быть существительным, состоять из 5 буквы" +
+               "\r\n\r\nУ вас будет несколько попыток угадать слово(в зависимости от уровня сложности)" +
+               "\r\n\r\nПосле каждой попытки цвет буквы будет меняться." +
+               "\r\n\r\nЗеленый — буква есть в слово и стоит именно в этом месте." +
+               "\r\n\r\nЖелтый — буква есть в слове, но она должна стоять в другом месте." +
+               "\r\n\r\nКрасный - кбуквы вообще нет в этом слове.",
+               "Правило игры", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

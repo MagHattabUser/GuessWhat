@@ -39,7 +39,9 @@
             // 
             // EntryLogin
             // 
+            this.EntryLogin.BackColor = System.Drawing.Color.LightSkyBlue;
             this.EntryLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EntryLogin.ForeColor = System.Drawing.Color.White;
             this.EntryLogin.Location = new System.Drawing.Point(91, 129);
             this.EntryLogin.Multiline = true;
             this.EntryLogin.Name = "EntryLogin";
@@ -48,7 +50,9 @@
             // 
             // EntryPassword
             // 
+            this.EntryPassword.BackColor = System.Drawing.Color.LightSkyBlue;
             this.EntryPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EntryPassword.ForeColor = System.Drawing.Color.White;
             this.EntryPassword.Location = new System.Drawing.Point(91, 191);
             this.EntryPassword.Multiline = true;
             this.EntryPassword.Name = "EntryPassword";
@@ -58,38 +62,46 @@
             // 
             // LoginInButton
             // 
-            this.LoginInButton.Location = new System.Drawing.Point(110, 346);
+            this.LoginInButton.BackColor = System.Drawing.Color.Black;
+            this.LoginInButton.ForeColor = System.Drawing.Color.White;
+            this.LoginInButton.Location = new System.Drawing.Point(108, 289);
             this.LoginInButton.Name = "LoginInButton";
             this.LoginInButton.Size = new System.Drawing.Size(106, 28);
             this.LoginInButton.TabIndex = 3;
             this.LoginInButton.Text = "Войти";
-            this.LoginInButton.UseVisualStyleBackColor = true;
+            this.LoginInButton.UseVisualStyleBackColor = false;
             this.LoginInButton.Click += new System.EventHandler(this.LoginInButton_Click);
             // 
             // SignInButton
             // 
-            this.SignInButton.Location = new System.Drawing.Point(91, 401);
+            this.SignInButton.BackColor = System.Drawing.Color.Black;
+            this.SignInButton.ForeColor = System.Drawing.Color.White;
+            this.SignInButton.Location = new System.Drawing.Point(78, 341);
             this.SignInButton.Name = "SignInButton";
-            this.SignInButton.Size = new System.Drawing.Size(163, 26);
+            this.SignInButton.Size = new System.Drawing.Size(173, 26);
             this.SignInButton.TabIndex = 4;
             this.SignInButton.Text = "Зарегистрироваться";
-            this.SignInButton.UseVisualStyleBackColor = true;
+            this.SignInButton.UseVisualStyleBackColor = false;
             this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
             // 
             // HidePasswordCheck
             // 
             this.HidePasswordCheck.AutoSize = true;
+            this.HidePasswordCheck.BackColor = System.Drawing.Color.DodgerBlue;
+            this.HidePasswordCheck.ForeColor = System.Drawing.Color.White;
             this.HidePasswordCheck.Location = new System.Drawing.Point(91, 236);
             this.HidePasswordCheck.Name = "HidePasswordCheck";
             this.HidePasswordCheck.Size = new System.Drawing.Size(114, 17);
             this.HidePasswordCheck.TabIndex = 5;
             this.HidePasswordCheck.Text = "Показать пароль";
-            this.HidePasswordCheck.UseVisualStyleBackColor = true;
+            this.HidePasswordCheck.UseVisualStyleBackColor = false;
             this.HidePasswordCheck.CheckedChanged += new System.EventHandler(this.HidePasswordCheck_CheckedChanged);
             // 
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
+            this.LoginLabel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.LoginLabel.ForeColor = System.Drawing.Color.White;
             this.LoginLabel.Location = new System.Drawing.Point(91, 110);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(38, 13);
@@ -99,6 +111,8 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.PasswordLabel.ForeColor = System.Drawing.Color.White;
             this.PasswordLabel.Location = new System.Drawing.Point(91, 175);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(45, 13);
@@ -109,6 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GuessWhat.Properties.Resources.hqdefault;
             this.ClientSize = new System.Drawing.Size(320, 480);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.LoginLabel);

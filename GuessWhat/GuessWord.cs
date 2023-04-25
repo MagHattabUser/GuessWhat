@@ -26,6 +26,7 @@ namespace GuessWhat
             Players = player;
             XMLDoc = new XML();
             this.Text = "GuessWord " + Players.GetUserName() + " наибольшее количество очков - " + Players.GetWordScore().ToString();
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void StartGame()

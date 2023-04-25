@@ -27,6 +27,8 @@ namespace GuessWhat
             Players = players;
             XMLDoc = new XML();
             this.Text = "GuessWord " + Players.GetUserName() + " наибольшее количество очков - " + Players.GetFilmScore().ToString();
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         private void Init()
@@ -38,6 +40,7 @@ namespace GuessWhat
             AnswerOne.Visible = true;
             AnswerTwo.Visible = true;
             AnswerThree.Visible = true;
+            ScoreLabel.Visible = true;
         }
         private void FillButtonsText(int correctAnswer, int answerOne, int answerTwo)
         {
@@ -129,7 +132,8 @@ namespace GuessWhat
             AnswerThree.Visible = false;
             RestartButton.Visible = false;
             Score = 0;
-            ScoreLabel.Text = Score.ToString();
+            ScoreLabel.Text = "Очки: " + Score.ToString();
+            ScoreLabel.Visible = false;
             AlreadyShow.Clear();
             pictureBox1.Image = Properties.Resources.guessfilmback;
         }

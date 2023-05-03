@@ -202,6 +202,7 @@
             this.Controls.Add(this.StartWordGame);
             this.Controls.Add(this.StartFilmGame);
             this.Controls.Add(this.StartMelodyGame);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuessWhat";

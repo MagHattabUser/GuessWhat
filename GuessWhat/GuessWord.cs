@@ -161,7 +161,7 @@ namespace GuessWhat
                 Players.SetWordScore(score);
                 this.Text = "GuessWord " + Players.GetUserName() + " наибольшее количество очков - " + Players.GetWordScore().ToString();
             }
-            MessageBox.Show("Вы набрали " + score.ToString() + " из 10", "Игра оконченая", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Вы набрали " + score.ToString() + " очков", "Игра оконченая", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

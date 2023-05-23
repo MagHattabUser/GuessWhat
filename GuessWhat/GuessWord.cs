@@ -186,6 +186,7 @@ namespace GuessWhat
                 RestartTheGameButton.Enabled = true;
                 RestartTheGameButton.Visible = true;
                 NextWord.Visible = false;
+                EntryWord.Enabled = false;
                 return true;
             }
             return false;
